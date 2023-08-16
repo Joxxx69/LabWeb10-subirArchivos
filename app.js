@@ -4,7 +4,7 @@ const fileUpload = require('express-fileupload')
 const app = express();
 const port = 8000;
 
-app.use(express.static())
+app.use(express.static('public'))
 app.use(fileUpload());
 
 
