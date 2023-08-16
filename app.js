@@ -1,5 +1,5 @@
 const express = require('express');
-const fileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload');
 
 const app = express();
 const port = 8000;
@@ -11,6 +11,7 @@ app.use(fileUpload());
 
 app.post('/upload',(req,res) => {
     let EDFile = req.files.file
+    console.log(EDFile);
     EDFile.mv(`./files/${EDFile.name}`,err => {
         if(err) return res.status(500).send({ message : err })
 
